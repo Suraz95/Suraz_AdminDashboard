@@ -1,9 +1,16 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { defaults } from "chart.js/auto";
 import { Line, Doughnut, Bar, Pie, Radar, PolarArea } from "react-chartjs-2";
 import "./App.css";
 
+import Aos from "aos"
+import "aos/dist/aos.css"
+
 const App = () => {
+  useEffect(() => {
+    Aos.init({duration:2000})
+  }, [])
+  
   defaults.maintainAspectRatio = false;
   defaults.responsive = true;
 
@@ -25,7 +32,7 @@ const App = () => {
   return (
     <div className="admin">
       <div className="side">
-        <div className="elements">
+        <div className="elements" data-aos="slide-right">
           <h1>IT Solutions</h1>
           <br />
           <hr className="hrr" />
@@ -37,7 +44,7 @@ const App = () => {
         </div>
       </div>
       <div className="dash">
-        <div className="item1 card">
+        <div className="item1 card" data-aos="slide-up">
           <Doughnut
             data={{
               labels: ["Product A", "Product B", "Product C"],
@@ -61,7 +68,7 @@ const App = () => {
             }}
           />
         </div>
-        <div className="item2 card">
+        <div className="item2 card" data-aos="slide-down">
           <Bar
             data={{
               labels: ["January", "February", "March"],
@@ -85,7 +92,7 @@ const App = () => {
             }}
           />
         </div>
-        <div className="item3 card">
+        <div className="item3 card" data-aos="slide-left">
           <PolarArea
             data={{
               labels: ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"],
@@ -115,7 +122,7 @@ const App = () => {
             }}
           />
         </div>
-        <div className="item4 card">
+        <div className="item4 card" data-aos="zoom-in">
           <Line
             data={{
               labels: ["Jan", "Feb", "Mar", "Apr", "May"],
@@ -155,7 +162,7 @@ const App = () => {
             }}
           />
         </div>
-        <div className="item5 card">
+        <div className="item5 card" data-aos="slide-right">
           <Pie
             data={{
               labels: ["Region A", "Region B", "Region C"],
@@ -179,7 +186,7 @@ const App = () => {
             }}
           />
         </div>
-        <div className="item6 card radar">
+        <div className="item6 card radar" data-aos="slide-up">
           <Radar
             data={{
               labels: [
